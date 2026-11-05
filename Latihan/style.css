@@ -1,0 +1,249 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	color: #222222;
+	/* Wallpaper Pixel Art Tema 1: City at Night (Pas & memenuhi layar tanpa distorsi) */
+	background: url('https://upload.wikimedia.org/wikipedia/commons/1/14/Upscaled_pixel_art_of_a_city_at_night.png') center/cover no-repeat fixed #0b0d19;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 30px 20px;
+	transition: background 0.5s ease, color 0.3s ease, font-size 0.2s ease;
+}
+
+.card {
+	/* Efek kartu semi-transparan (glassmorphism) yang elegan */
+	background-color: rgba(255, 255, 255, 0.94);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	border-radius: 16px;
+	padding: 32px 36px;
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+	border: 1px solid rgba(255, 255, 255, 0.6);
+	width: 100%;
+	max-width: 520px;
+	text-align: center;
+}
+
+.card h2 {
+	font-size: 1.25em;
+	font-weight: bold;
+	color: inherit;
+	margin-bottom: 20px;
+	transition: color 0.3s ease;
+}
+
+.result-box {
+	background-color: rgba(209, 231, 246, 0.85); /* Warna biru muda lembut */
+	border-radius: 8px;
+	padding: 16px 20px;
+	text-align: left;
+}
+
+.result-box p {
+	font-size: 0.92em;
+	color: inherit;
+	line-height: 1.6;
+	transition: color 0.3s ease;
+}
+
+.result-box p + p {
+	margin-top: 8px;
+}
+
+/* Tombol interaktif di output3 */
+#output3 {
+	margin-top: 22px;
+	display: flex;
+	gap: 10px;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+#output3 button {
+	padding: 9px 14px;
+	background-color: #2b7a78;
+	color: #ffffff;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+	font-size: 0.85rem;
+	font-weight: 500;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+	transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#output3 button:hover {
+	background-color: #205c5a;
+	transform: translateY(-1px);
+}
+
+#output3 button:active {
+	transform: translateY(0);
+}
+
+/* Form di output4 */
+#output4 {
+	margin-top: 24px;
+	padding-top: 20px;
+	border-top: 1px solid #cbd5e1;
+	text-align: left;
+}
+
+#output4 form {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+#output4 label {
+	font-size: 0.9em;
+	font-weight: bold;
+	color: inherit;
+	margin-top: 4px;
+}
+
+#output4 input {
+	padding: 9px 12px;
+	background-color: #ffffff;
+	border: 1px solid #cbd5e1;
+	border-radius: 6px;
+	font-size: 0.9em;
+	font-family: inherit;
+	width: 100%;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#output4 input:focus {
+	outline: none;
+	border-color: #2b7a78;
+	box-shadow: 0 0 0 3px rgba(43, 122, 120, 0.2);
+}
+
+#output4 button {
+	margin-top: 8px;
+	padding: 9px 18px;
+	background-color: #2b7a78;
+	color: #ffffff;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+	font-size: 0.9rem;
+	font-weight: bold;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+	align-self: flex-start;
+	transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#output4 button:hover {
+	background-color: #205c5a;
+	transform: translateY(-1px);
+}
+
+#output4 button:active {
+	transform: translateY(0);
+}
+
+#error-message {
+	font-size: 0.88em;
+	font-weight: 500;
+	margin-top: 8px;
+	line-height: 1.4;
+}
+
+/* To-Do List di output5 */
+#output5 {
+	margin-top: 24px;
+	padding-top: 20px;
+	border-top: 1px solid #cbd5e1;
+	text-align: left;
+}
+
+#output5 #task-input {
+	padding: 9px 12px;
+	background-color: #ffffff;
+	border: 1px solid #cbd5e1;
+	border-radius: 6px;
+	font-size: 0.9em;
+	font-family: inherit;
+	width: calc(100% - 95px);
+	margin-right: 6px;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#output5 #task-input:focus {
+	outline: none;
+	border-color: #2b7a78;
+	box-shadow: 0 0 0 3px rgba(43, 122, 120, 0.2);
+}
+
+#output5 #add-task {
+	padding: 9px 16px;
+	background-color: #2b7a78;
+	color: #ffffff;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+	font-size: 0.9rem;
+	font-weight: bold;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+	transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#output5 #add-task:hover {
+	background-color: #205c5a;
+	transform: translateY(-1px);
+}
+
+#output5 #add-task:active {
+	transform: translateY(0);
+}
+
+#task-list {
+	list-style: none;
+	padding: 0;
+	margin-top: 14px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+#task-list li {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	background: rgba(255, 255, 255, 0.85);
+	padding: 8px 12px;
+	border-radius: 6px;
+	border: 1px solid #e2e8f0;
+}
+
+#task-list li span {
+	flex: 1;
+	font-size: 0.92em;
+	word-break: break-word;
+	color: #222;
+}
+
+#task-list li button {
+	padding: 5px 12px;
+	background-color: #e53e3e;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 0.8rem;
+	font-weight: 500;
+	transition: background-color 0.2s ease;
+}
+
+#task-list li button:hover {
+	background-color: #c53030;
+}
